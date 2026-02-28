@@ -1,0 +1,103 @@
+/* About Section Styles */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.about-row {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.about {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.about:hover {
+  border-bottom: #ff073a solid 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(255, 7, 58, 0.25);
+}
+
+.about h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: white;
+  position: relative;
+  display: inline-block;
+}
+
+.about h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff073a, transparent);
+  border-radius: 2px;
+}
+
+.about p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.about-tags span {
+  background: rgba(255, 7, 58, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.about-tags span:hover {
+  background: rgba(255, 7, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Mobile responsiveness for About Me section */
+@media (max-width: 768px) {
+  .about-row {
+    flex-direction: column;
+  }
+  
+  .about-section {
+    gap: 1.5rem;
+  }
+  
+  .about {
+    width: 100%;
+  }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ahmed Abobaker - Front-End Developer specializing in creating clean, scalable, and high-performance web applications with modern technologies.">
+    <meta name="keywords" content="Ahmed Abobaker, Front-End Developer, JavaScript, React, HTML, CSS, Portfolio">
+    <meta name="author" content="Ahmed Abobaker">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ahmed Abobaker - Front-End Developer">
+    <meta property="og:description" content="Front-End Developer specializing in creating clean, scalable, and high-performance web applications with modern technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mody-ctrl.github.io/Portfolio/">
+    <title>Ahmed Abobaker - Front-End Developer</title>
+    <link rel="preload" as="image" href="img/Background.jpg" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/photo_2025-12-24_18-27-29.jpg">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">Ahmed Abobaker</div>
+            <div class="loading-subtitle">Front-End Developer</div>
+            <div class="loading-bar-container">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    <!-- Header Section -->
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#about-me" class="nav-btn" role="menuitem">About</a>
+                <a href="#skills-title" class="nav-btn" role="menuitem">Skills</a>
+                <a href="#projects-title" class="nav-btn" role="menuitem">Projects</a>
+                <a href="#contacts" class="nav-btn" role="menuitem">Contact</a>
+                <a href="./Resume/Ahmed_Abobaker_Front-End Developer_resume (3)-compressed.pdf" class="nav-btn cv-btn" target="_blank" rel="noopener noreferrer" role="menuitem">View CV</a>
+                <a href="./Resume/Ahmed_Abobaker_Front-End Developer_resume (3)-compressed.pdf" class="nav-btn cv-btn" target="_blank" rel="noopener noreferrer" role="menuitem">Download CV</a>
+            </div>
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="main-content" aria-label="Main content"></div>
+    <canvas id="particles" aria-hidden="true" role="presentation"></canvas>
+    
+    <!-- line between sections -->
+    <div class="divider" aria-hidden="true"></div>
+    <main role="main">
+        <section class="intro-section" aria-labelledby="intro-heading">
+            <h1 id="intro-heading" class="visually-hidden">Introduction</h1>
+            <div class="intro-container">
+                <div class="intro-left">
+                    <div class="stats-grid" aria-label="Professional statistics">
+                        <div aria-labelledby="exp-count">
+                            <p id="exp-count" class="stat-number">0</p>
+                            <p>Years of Experience</p>
+                        </div>
+                        <div aria-labelledby="client-count">
+                            <p id="client-count" class="stat-number">100%</p>
+                            <p>Satisfied Clients</p>
+                        </div>
+                        <div aria-labelledby="worldwide-count">
+                            <p id="worldwide-count" class="stat-number">0</p>
+                            <p>Clients Worldwide</p>
+                        </div>
+                        <div aria-labelledby="projects-count">
+                            <p id="projects-count" class="stat-number">3</p>
+                            <p>Projects Done</p>
+                        </div>
+                    </div>
+                    <p class="bio">Building creative, scalable, and high-performance web. Passionate about modern tech and elegant user experiences.</p>
+                </div>
+
+                <div class="intro-right">
+                    <h1>Ahmed Abobaker</h1>
+                    <p class="subtitle">Front-End Developer</p>
+
+                    <div class="profile-photo" aria-label="Profile picture">
+                        <img src="img/photo_2025-12-24_18-27-29.jpg" alt="Profile photo of Ahmed Abobaker" id="profile-img">
+                    </div>
+                </div>
+            </div>
+            <div class="divider" aria-hidden="true"></div>
+
+            <h2 id="about-me">About Me</h2>
+
+            <div class="about-section" aria-labelledby="about-me">
+                <div class="about-row">
+                    <!-- About 1 -->
+                    <div class="about" role="article">
+                        <h3>Clean & Scalable Code</h3>
+
+                        <p>
+                            Writing maintainable, production-ready code following industry
+                            best practices and clean architecture principles.
+                        </p>
+
+                        <div class="about-tags" aria-label="Related technologies">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>Clean Architecture</span>
+                        </div>
+                    </div>
+
+                    <!-- About 2 -->
+                    <div class="about" role="article">
+                        <h3>Modern UI/UX Design</h3>
+                        <p>
+                            Creating beautiful, responsive interfaces with pixel-perfect
+                            attention to detail and smooth animations.
+                        </p>
+                        <div class="about-tags" aria-label="Related technologies">
+                            <span>Figma</span>
+                            <span>Tailwind CSS</span>
+                            <span>Framer Motion</span>
+                            <span>GSAP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-row">
+                    <!-- About 3 -->
+                    <div class="about" role="article">
+                        <h3>Performance Optimization</h3>
+
+                        <p>
+                            Optimizing applications for blazing-fast speed, SEO, and
+                            core web vitals for better user experience.
+                        </p>
+
+                        <div class="about-tags" aria-label="Related technologies">
+                            <span>Performance</span>
+                            <span>SEO</span>
+                            <span>Core Web Vitals</span>
+                            <span>Lighthouse</span>
+                        </div>
+                    </div>
+
+                    <!-- About 4 -->
+                    <div class="about" role="article">
+                        <h3>User-Focused Development</h3>
+
+                        <p>
+                            Building intuitive, accessible, and user-centered experiences
+                            with strong focus on usability and real-world performance.
+                        </p>
+
+                        <div class="about-tags" aria-label="Related technologies">
+                            <span>Accessibility</span>
+                            <span>UX Thinking</span>
+                            <span>Responsive Design</span>
+                            <span>User Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- line between sections -->
+            <div class="divider" aria-hidden="true"></div>
+
+            <!-- Skills Section -->
+            
+            <h2 id="skills-title">Front-End Skills</h2>
+            <div class="skills-container" id="frontend-skills" aria-labelledby="skills-title" role="region">
+            </div>
+            
+           <div class="divider" aria-hidden="true"></div>
+            
+            <h2 id="skills-title">Back-End Skills</h2>
+            <div class="skills-container" id="backend-skills" aria-labelledby="skills-title" role="region">
+            </div>
+        </section>
+            <!-- line between sections -->
+            <div class="divider" aria-hidden="true"></div>
+
+            <!-- Projects -->
+            <h2 id="projects-title">Projects</h2>
+            <section class="projects-grid" id="projects" aria-labelledby="projects-title" role="region">
+            </section>
+
+            <!-- line between sections -->
+            <div class="divider" aria-hidden="true"></div>
+        </main>
+        
+        <!-- Contact Section -->
+        <section id="contacts" class="section-5" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <!-- Social and contact section -->
+            <div class="social-contact-container" role="region" aria-labelledby="social-links-heading">
+                <h3 id="social-links-heading">My Links</h3>
+                <div class="social-links" id="contact" role="list">
+                </div>
+            </div>
+            <form class="contact-form" role="form" aria-label="Contact form" action="#" method="post">
+                <input class="textarea" type="text" placeholder="Name" required aria-label="Your name">
+                <input class="textarea" type="email" placeholder="Email" required aria-label="Your email address">
+                <textarea class="textarea" placeholder="Message" required aria-label="Your message"></textarea>
+                <button type="submit" aria-label="Send message">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <g>
+                                    <path fill="none" d="M0 0h24v24H0z"/>
+                                    <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 Ahmed | Front-End Developer</p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
