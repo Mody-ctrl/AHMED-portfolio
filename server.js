@@ -1,11 +1,46 @@
+import express from 'express';
 import nodemailer from 'nodemailer';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 
-export default async function handler(req, res) {
-  // Handle only POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+// Load environment variables
+dotenv.config({ path: '.env.local' });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// handle port in use gracefully
+function onError(error) {
+  if (error.syscall !== 'listen') throw error;
+  if (error.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use.`);
+    process.exit(1);
   }
+  throw error;
+}
 
+// Middleware
+app.use(express.json());
+app.use(express.static('public'));
+
+// Helper function to escape HTML
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (m) => map[m]);
+}
+
+// Contact form API endpoint
+app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
   // Validate input
@@ -18,8 +53,6 @@ export default async function handler(req, res) {
 
   try {
     // Create transporter using Gmail SMTP
-    // You need to set environment variables:
-    // GMAIL_EMAIL and GMAIL_PASSWORD (or app-specific password)
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -74,16 +107,11 @@ export default async function handler(req, res) {
       error: { message: 'Failed to send email. Please try again later.' } 
     });
   }
-}
+});
 
-// Helper function to escape HTML
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
-  };
-  return text.replace(/[&<>"']/g, (m) => map[m]);
-}
+const server = app.listen(PORT, () => {
+  console.log(`🚀 Development server running at http://localhost:${PORT}`);
+  console.log(`📧 Contact form emails will be sent to: ahmedabobaker1010@gmail.com`);
+});
+
+server.on('error', onError);

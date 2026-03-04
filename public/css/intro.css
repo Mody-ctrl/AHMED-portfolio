@@ -32,15 +32,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
   gap: 1.5rem;
   min-width: 0;
 }
 
-.subtitle {
+.intro-right .subtitle {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
   letter-spacing: 2px;
@@ -61,8 +61,9 @@
   height: 18rem;
   border-radius: 35%;
   overflow: visible;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   margin-top: 0; 
+  filter: drop-shadow(0 0 20px rgba(255, 7, 58, 0.3));
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -77,6 +78,7 @@
   filter: blur(20px);
   opacity: 0.6;
   transition: all 0.6s ease;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
 
 /* Double spinning border effect */
@@ -101,11 +103,7 @@
   z-index: -1;
   filter: drop-shadow(0 0 10px rgba(255, 7, 58, 0.8));
   transition: all 0.6s ease;
-}
-
-.profile-photo {
-  filter: drop-shadow(0 0 20px rgba(255, 7, 58, 0.3));
-  transition: all 0.6s ease;
+  animation: spinBorder 3s linear infinite;
 }
 
 @keyframes spinBorder {
@@ -132,16 +130,16 @@
 }
 
 .profile-photo:hover {
-  transform: scale(1.08) rotate(2deg);
+  transform: scale(1.02);
 }
 
 .profile-photo:hover::before {
-  opacity: 1;
-  filter: blur(25px);
+  opacity: 0.7;
+  filter: blur(18px);
 }
 
 .profile-photo:hover::after {
-  filter: drop-shadow(0 0 15px rgba(255, 7, 58, 1));
+  filter: drop-shadow(0 0 8px rgba(255, 7, 58, 0.5));
 }
 
 .profile-photo img {
@@ -159,8 +157,8 @@
 
 .profile-photo:hover img {
   box-shadow:
-    0 0 50px rgba(255, 7, 58, 0.6),
-    inset 0 0 40px rgba(255, 7, 58, 0.2);
+    0 0 35px rgba(255, 7, 58, 0.5),
+    inset 0 0 35px rgba(255, 7, 58, 0.15);
 }
 
 .stats-grid {
@@ -292,7 +290,19 @@
   }
   
   .profile-photo {
-    width: 15rem;
-    height: 15rem;
+    width: 16rem;
+    height: 16rem;
+  }
+  
+  /* Make subtitle appear at top of profile picture on mobile */
+  .intro-right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .intro-right .subtitle {
+    order: -1;
+    margin-bottom: 1rem;
   }
 }

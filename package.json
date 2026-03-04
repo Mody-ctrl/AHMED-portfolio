@@ -4,10 +4,12 @@
   "description": "Personal portfolio website with email functionality",
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "node server.js",
     "build": "echo 'Static site - no build required'"
   },
   "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
     "nodemailer": "^6.9.16"
   }
 }
